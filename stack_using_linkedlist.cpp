@@ -45,14 +45,13 @@ bool isFull() {
 	return false;
 }
 void clear() {
-	Node* temp = head->next;
-	Node* prev = head;
+	Node* temp = head;
+	Node* prev ;
 	while (temp) {
-		delete(prev);
-		prev = temp;
-		temp = temp->next;
+		prev = temp->next;
+		delete(temp);
+		temp = prev;
 	}
-	delete(prev);
 }
 
 };
